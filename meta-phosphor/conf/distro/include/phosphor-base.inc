@@ -1,7 +1,7 @@
 require conf/distro/include/phosphor-defaults.inc
 
 # Match the distro codename from upstream poky.
-DISTRO_CODENAME ?= "styhead"
+DISTRO_CODENAME ?= "wrynose"
 
 DISTROOVERRIDES .= ":openbmc-phosphor"
 
