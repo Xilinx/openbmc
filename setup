@@ -41,7 +41,10 @@ machine() {
         setopt local_options shwordsplit
     fi
     if which find > /dev/null 2>&1; then
-        configs="$(find meta-* -path "*/conf/machine/*.conf" -not -path "*/conf/machine/include/*")"
+        # Use -L so that meta layers which are symlinks (e.g. shared/vendored
+        # layers linked into the build tree) are followed and their machine
+        # configs are discovered.
+        configs="$(find -L meta-* -path "*/conf/machine/*.conf" -not -path "*/conf/machine/include/*")"
     else
         configs=$(ls -1 meta-*/meta-*/conf/machine/*.conf meta-*/conf/machine/*.conf)
     fi
