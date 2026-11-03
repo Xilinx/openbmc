@@ -7,6 +7,21 @@ features. This layer enables AMD adaptive socs metadata features such as recipes
 for u-boot configuration fragments, kernel configuration fragments, series
 configuration compiler(.scc) files etc,. and common image features etc.
 
+* **meta-amd-zcu102-openbmc**: layer containing the zcu102-openbmc machine
+configuration for the AMD Zynq UltraScale+ MPSoC ZCU102 evaluation board such
+as machine configuration, multiconfig, system device tree, machineyaml, wks and
+default build template files.
+
+* **meta-amd-zcu104-openbmc**: layer containing the zcu104-openbmc machine
+configuration for the AMD Zynq UltraScale+ MPSoC ZCU104 evaluation board such
+as machine configuration, multiconfig, system device tree, machineyaml, wks and
+default build template files.
+
+* **meta-amd-zcu106-openbmc**: layer containing the zcu106-openbmc machine
+configuration for the AMD Zynq UltraScale+ MPSoC ZCU106 evaluation board such
+as machine configuration, multiconfig, system device tree, machineyaml, wks and
+default build template files.
+
 > **Note:** Additional information on AMD Adaptive SoC's and FPGA's can be found at:
 	https://www.amd.com/en/products/adaptive-socs-and-fpgas.html
 
@@ -38,3 +53,11 @@ This layer depends on:
 	layers: meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt,
 	        meta-microblaze.
 	branch: wrynose
+
+The meta-amd-zcu102-openbmc, meta-amd-zcu104-openbmc and meta-amd-zcu106-openbmc
+sub layers additionally depend on:
+
+	URI:
+        https://github.com/Xilinx/meta-amd-adaptive-socs (development and AMD release)
+	layers: meta-amd-adaptive-socs-bsp
+	branch: wrynose or AMD release version (e.g. rel-v2026.2)
