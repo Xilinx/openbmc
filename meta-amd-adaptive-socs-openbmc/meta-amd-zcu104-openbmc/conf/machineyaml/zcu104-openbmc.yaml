@@ -1,0 +1,32 @@
+inherit:
+    ${BSPLAYERDIR_amd-adaptive-socs-bsp}/conf/machineyaml/zynqmp-zcu104-sdt-full.yaml
+
+args:
+    - --machine-name zcu104-openbmc
+
+machine:
+    description: >
+        Machine configuration for the AMD Zynq UltraScale+ MPSoC ZCU104
+        evaluation kit (Cortex-A53 Linux plus FSBL and MicroBlaze PMU
+        sub-machines), built from system device tree for OpenBMC.
+    pre:
+        MACHINE_FEATURES:
+            comment: |
+                By default, gen-machine-conf includes vcu and mali400 machine
+                # features for ZynqMP EV devices. This is not needed for OpenBMC
+                # and it is safe to remove.
+            op: '+='
+            val: "fpga-overlay efi"
+        MACHINE_HWCODECS:
+            comment: |
+                By default, gen-machine-conf sets libvcu-omxil machine hw codecs
+                # for ZynqMP EV devices based on vcu machine features. This is
+                # not needed for OpenBMC and it is safe to remove.
+            op: '='
+            val: ""
+        WKS_FILE:
+            comment: |
+                Use zcu104-openbmc-sd-efi.wks as the default WIC file. Users
+                # can override it in local.conf if needed.
+            op: '?='
+            val: "${@bb.utils.contains('COMBINED_FEATURES', 'efi', 'zcu104-openbmc-sd-efi.wks', 'xilinx-default-sd.wks', d)}"
