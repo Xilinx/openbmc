@@ -1,0 +1,23 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ##OEROOT##/meta \
+  ##OEROOT##/meta-openembedded/meta-oe \
+  ##OEROOT##/meta-openembedded/meta-networking \
+  ##OEROOT##/meta-openembedded/meta-python \
+  ##OEROOT##/meta-phosphor \
+  ##OEROOT##/meta-arm/meta-arm \
+  ##OEROOT##/meta-arm/meta-arm-toolchain \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-xilinx/meta-xilinx-core \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-xilinx/meta-xilinx-standalone \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-xilinx/meta-xilinx-standalone-sdt \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-xilinx/meta-microblaze \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-amd-adaptive-socs-bsp \
+  ##OEROOT##/meta-amd-adaptive-socs-openbmc/meta-amd-zcu106-openbmc \
+  "
