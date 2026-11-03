@@ -1,0 +1,9 @@
+### Shell environment set up for builds. ###
+
+The following machines:
+    - zcu102-openbmc
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+     obmc-phosphor-image
