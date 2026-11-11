@@ -32,6 +32,12 @@ Please see the respective READMEs and docs in the layer subdirectories.
 See [README.building.md](README.building.md) for instructions on setting up the
 build host and building OpenBMC images for AMD Adaptive SoCs evaluation boards.
 
+## Machine Generation
+
+See [README.machine.generation.md](README.machine.generation.md) for instructions
+on generating machine configuration files from System Device Tree (SDT)
+artifacts using gen-machine-conf.
+
 ## Dependencies
 
 This layer depends on:

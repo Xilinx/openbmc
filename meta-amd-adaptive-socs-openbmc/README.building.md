@@ -76,6 +76,7 @@ meta-amd-adaptive-socs-openbmc/
 ├── meta-xilinx -> ../../meta-xilinx
 ├── OWNERS
 ├── README.building.md
+├── README.machine.generation.md
 ├── README.md
 └── recipes-phosphor
 ```
