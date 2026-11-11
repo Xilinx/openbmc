@@ -27,11 +27,16 @@ default build template files.
 
 Please see the respective READMEs and docs in the layer subdirectories.
 
+## Build Instructions
+
+See [README.building.md](README.building.md) for instructions on setting up the
+build host and building OpenBMC images for AMD Adaptive SoCs evaluation boards.
+
 ## Dependencies
 
 This layer depends on:
 
-	URI: https://git.yoctoproject.org/poky
+	URI: https://git.openembedded.org/openembedded-core
 	layers: meta
 	branch: wrynose
 
@@ -52,7 +57,7 @@ This layer depends on:
         https://github.com/Xilinx/meta-xilinx (development and AMD release)
 	layers: meta-xilinx-core, meta-xilinx-standalone, meta-xilinx-standalone-sdt,
 	        meta-microblaze.
-	branch: wrynose
+	branch: wrynose or AMD release version (e.g. rel-v2026.2)
 
 The meta-amd-zcu102-openbmc, meta-amd-zcu104-openbmc and meta-amd-zcu106-openbmc
 sub layers additionally depend on:
